@@ -1,0 +1,18 @@
+<div class="notification-container">
+  <input
+    type="text"
+    [(ngModel)]="messageContent"
+    placeholder="Digite a notificação"
+    class="notification-input"
+  />
+  <button (click)="createNotification()" class="notification-button">
+    Enviar Notificação
+  </button>
+
+  <ul class="notification-list">
+    <li *ngFor="let notif of notifications" class="notification-item">
+      {{ notif.messageContent }}
+      <span class="notification-status">{{ notif.status }}</span>
+    </li>
+  </ul>
+</div>
