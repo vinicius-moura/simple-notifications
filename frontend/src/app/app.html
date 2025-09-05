@@ -12,7 +12,14 @@
   <ul class="notification-list">
     <li *ngFor="let notif of notifications" class="notification-item">
       {{ notif.messageContent }}
-      <span class="notification-status">{{ notif.status }}</span>
+      <span
+        class="notification-status"
+        [ngClass]="{
+          'status-error': notif.status === 'Erro'
+        }"
+      >
+        {{ notif.status }}
+      </span>
     </li>
   </ul>
 </div>

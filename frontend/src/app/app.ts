@@ -19,9 +19,12 @@ export class AppComponent {
       return;
     }
 
+    //mock 20% error
+    const isError = Math.random() < 0.2;
+
     const newNotification = {
       messageContent: this.messageContent.trim(),
-      status: 'Enviado'
+      status: isError ? 'Erro' : 'Enviado'
     };
 
     this.notifications.push(newNotification);
